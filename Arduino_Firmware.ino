@@ -12,24 +12,25 @@ void step7();
 void step8();
 
 void setup() {
-    // initialize the digital pin as an output.
     pinMode(8, OUTPUT);
     pinMode(9, OUTPUT);
     pinMode(10, OUTPUT);
     pinMode(11, OUTPUT);
 }
+
 void loop() {
-    int i=0;
-    //revolve one revolution clockwise
-    for(i=0;i<512;i++){
-        clockwiserotate();}
-    delay(1000);              // wait for a second
-    //revolve one revolution counterclockwise
-    for(i=0;i<512;i++){
-        counterclockwiserotate();}
-    delay(1000);              // wait for a second
+    for(int i=0;i<512;i++){
+        clockwiserotate();
+    }
+    delay(1000);              
+   
+    for(int i=0;i<512;i++){
+        counterclockwiserotate();
+    }
+    delay(1000);          
 }
-void clockwiserotate() { //revolve clockwise
+
+void clockwiserotate() {
     step1();
     step2();
     step3();
@@ -39,7 +40,7 @@ void clockwiserotate() { //revolve clockwise
     step7();
     step8();
 }
-void counterclockwiserotate() { //revolve counterclockwise
+void counterclockwiserotate() {
     step1();
     step7();
     step6();
